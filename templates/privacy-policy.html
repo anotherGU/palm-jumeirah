@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — The View Palm Jumeirah</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header (упрощённый: Book Now ведёт на главную) -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="{{ url_for('static', filename='images/TheViewLogo-Nd4567b41-74d0-461b-b505-dc80c36c3418 (1).svg') }}"
+              alt="The View"
+              width="120"
+            />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/" class="nav-filter">Home</a></li>
+              <li>
+                <a href="/#experiences" class="nav-filter" data-category="all"
+                  >Experiences</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/#experiences"
+                  class="nav-filter"
+                  data-category="premium"
+                  >Premium</a
+                >
+              </li>
+              <li>
+                <a href="/privacy-policy" class="nav-filter active">Privacy</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-right">
+            <div class="phone">+800 THE VIEW</div>
+            <a class="book-now-btn" href="/">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Banner -->
+    <section class="promo-banner" style="padding: 28px 0">
+      <div class="container">
+        <div class="promo-content" style="gap: 8px">
+          <div class="promo-badge">Legal</div>
+          <h3 style="font-size: 1.8rem; text-align: center">Privacy Policy</h3>
+          <p style="opacity: 0.9">
+            Last updated: <strong>November 3, 2025</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <section style="padding: 30px 0 10px">
+      <div class="container">
+        <div class="categories-header" style="margin-bottom: 18px">
+          <h2 style="margin-bottom: 6px">Overview</h2>
+          <p>
+            How we collect, use, store and protect your data when you browse,
+            book and pay for experiences at The View.
+          </p>
+        </div>
+        <div class="categories-buttons" style="margin-bottom: 10px">
+          <a href="#data-we-collect" class="category-btn">What We Collect</a>
+          <a href="#how-we-use" class="category-btn">How We Use</a>
+          <a href="#payments-security" class="category-btn"
+            >Payments & Security</a
+          >
+          <a href="#sms-telegram" class="category-btn">SMS & Notifications</a>
+          <a href="#cookies" class="category-btn">Cookies</a>
+          <a href="#retention" class="category-btn">Retention</a>
+          <a href="#rights" class="category-btn">Your Rights</a>
+          <a href="#third-parties" class="category-btn">Third Parties</a>
+          <a href="#contact" class="category-btn">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <main>
+      <section id="intro" style="padding: 12px 0 10px">
+        <div class="container">
+          <div class="special-offer-note" style="margin-bottom: 18px">
+            <div class="offer-icon">🔒</div>
+            <p style="margin: 0">
+              We are committed to protecting your privacy and handling your data
+              transparently and securely.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="data-we-collect" style="padding: 14px 0">
+        <div class="container">
+          <div class="categories-header" style="animation: fadeInUp 0.6s ease">
+            <h2>1. What Data We Collect 🔍</h2>
+            <p>
+              We collect only what we need to provide, improve and secure the
+              service.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Booking Data</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Full name and phone number provided at booking</li>
+                    <li>Selected experience and price</li>
+                    <li>System identifiers: session ID, booking ID</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Technical Data</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Device/browser information, basic logs</li>
+                    <li>IP address (for security & fraud prevention)</li>
+                    <li>Cookies (see section 5)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Payment-Related</h3></div>
+                <div class="description">
+                  We do not store full card numbers. We may process masked PAN,
+                  expiry and status responses needed for payment routing and
+                  security checks (see section 3).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-we-use" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.05s"
+          >
+            <h2>2. How We Use Your Data 🎯</h2>
+            <p>
+              Only for legitimate purposes tied to your booking and the
+              platform’s operation.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Provide & Manage Services</h3>
+                </div>
+                <div class="description">
+                  <ul>
+                    <li>Process bookings, confirmations and support</li>
+                    <li>Display correct prices, availability and options</li>
+                    <li>Send essential service updates (e.g., SMS code)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Improve & Secure</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Prevent fraud and abuse</li>
+                    <li>Monitor uptime and app performance</li>
+                    <li>Enhance UX and content relevance</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Legal & Compliance</h3></div>
+                <div class="description">
+                  Where required by law or to protect our rights and users
+                  (e.g., chargeback handling).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="payments-security" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.1s"
+          >
+            <h2>3. Payments & Card Security 💳</h2>
+            <p>Industry-standard practices to safeguard payment processing.</p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Processing</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Transactions are handled via secure gateways</li>
+                    <li>We do not keep full card numbers on our servers</li>
+                    <li>We may store masked card references and statuses</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Security Measures</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Transport encryption (HTTPS)</li>
+                    <li>Access restrictions and logging</li>
+                    <li>Fraud screening and anomaly checks</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Disputes</h3></div>
+                <div class="description">
+                  In case of refunds/chargebacks, we may share relevant records
+                  with the payment provider to resolve the case.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sms-telegram" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.15s"
+          >
+            <h2>4. SMS & Notifications 📱</h2>
+            <p>
+              We use SMS for verification and essential booking updates.
+              Telegram integrations may be used for internal operational alerts.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>What You May Receive</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Verification codes and payment confirmations</li>
+                    <li>Important updates about your booking</li>
+                    <li>Support follow-ups when you request help</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Opt-Out</h3></div>
+                <div class="description">
+                  For strictly necessary service messages (codes/receipts),
+                  opt-out may be limited. For marketing messages (if any), you
+                  can opt out at any time.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cookies" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.2s"
+          >
+            <h2>5. Cookies & Tracking 🍪</h2>
+            <p>
+              We use cookies to keep sessions, remember preferences and analyze
+              traffic.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Types</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Strictly necessary (session, security)</li>
+                    <li>Performance/analytics</li>
+                    <li>Preference (language, UI state)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Controls</h3></div>
+                <div class="description">
+                  You can adjust cookie settings via your browser. Blocking
+                  essential cookies may impact core functionality.
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>3rd-Party Pixels</h3></div>
+                <div class="description">
+                  We may use pixels for analytics/attribution (e.g., to measure
+                  visits and conversions).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="retention" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.25s"
+          >
+            <h2>6. Data Retention ⏳</h2>
+            <p>
+              We keep data for only as long as necessary for the purposes
+              outlined here or as required by law.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Retention Windows</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Operational logs: short-term rolling windows</li>
+                    <li>Payment records: per legal/accounting requirements</li>
+                    <li>Support correspondence: until case closure + buffer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Deletion</h3></div>
+                <div class="description">
+                  When no longer needed, we delete or anonymize data in our
+                  active systems and backups within reasonable cycles.
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Backups</h3></div>
+                <div class="description">
+                  Backups are retained for disaster recovery and rotate on
+                  scheduled intervals.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rights" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.3s"
+          >
+            <h2>7. Your Rights ✅</h2>
+            <p>
+              You may have rights to access, correct, delete or restrict
+              processing of your personal data, and to data portability and
+              objection where applicable.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Requests</h3></div>
+                <div class="description">
+                  To exercise your rights, contact us (see section 9). We may
+                  need to verify your identity to process the request.
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Complaints</h3></div>
+                <div class="description">
+                  If you believe your rights were violated, you may lodge a
+                  complaint with your local data protection authority.
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Limitations</h3></div>
+                <div class="description">
+                  Some rights may be limited where fulfilling them would
+                  conflict with legal obligations or legitimate interests (e.g.,
+                  fraud prevention).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="third-parties" style="padding: 14px 0">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.35s"
+          >
+            <h2>8. Third-Party Services 🔗</h2>
+            <p>
+              We may share limited data with service providers strictly
+              necessary to operate and improve our services.
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Categories</h3></div>
+                <div class="description">
+                  <ul>
+                    <li>Payment processors and anti-fraud tools</li>
+                    <li>SMS/communication providers</li>
+                    <li>Hosting, analytics and performance monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Safeguards</h3></div>
+                <div class="description">
+                  We require appropriate confidentiality and security
+                  commitments and share only what is necessary for the task.
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Transfers</h3></div>
+                <div class="description">
+                  Where data is transferred internationally, we use lawful
+                  transfer mechanisms (e.g., SCCs) where required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="padding: 14px 0 40px">
+        <div class="container">
+          <div
+            class="categories-header"
+            style="animation: fadeInUp 0.6s ease 0.4s"
+          >
+            <h2>9. Contact 📬</h2>
+            <p>
+              If you have any questions or requests about this Privacy Policy,
+              contact us:
+            </p>
+          </div>
+          <div class="offers-grid" style="margin-top: 12px">
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Support</h3></div>
+                <div class="description">
+                  <p>
+                    Email: support@theview.example<br />Phone: +800 THE VIEW
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Postal</h3></div>
+                <div class="description">
+                  <p>The View Palm Jumeirah<br />Dubai, UAE</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="offer-card">
+              <div class="offer-content">
+                <div class="offer-header"><h3>Back to Home</h3></div>
+                <div class="description">
+                  <a
+                    class="book-now-btn"
+                    href="/"
+                    style="display: inline-block; margin-top: 6px"
+                    >Go to Home</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top: 18px; font-size: 0.85rem; color: #7f8c8d">
+            We may update this Privacy Policy from time to time. Please review
+            it periodically for changes.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="copyright">
+            Copyright 2025 The View Palm Jumeirah. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="/">Contact Us</a>
+            <a href="/">Find Us</a>
+            <a href="/">Whistleblowing</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/">Cookie Policy</a>
+            <a href="/">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

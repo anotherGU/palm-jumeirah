@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+    sans-serif;
+  background: linear-gradient(135deg, #e8ecf5 0%, #f0f4fb 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 80px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.left-section {
+  flex: 1;
+  max-width: 450px;
+}
+
+.left-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.left-section .subtitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #8b92a3;
+  margin-bottom: 40px;
+}
+
+.illustration {
+  margin: 40px 0;
+}
+
+.illustration svg {
+  width: 220px;
+  height: auto;
+}
+
+.description {
+  color: #3366ff;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.right-section {
+  flex: 0 0 480px;
+}
+
+.payment-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 32px 32px 20px;
+  gap: 20px;
+}
+
+.status-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #4d6aff 0%, #3355ff 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(51, 85, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.payment-info {
+  flex: 1;
+  text-align: center;
+}
+
+.payment-status {
+  font-size: 14px;
+  color: #5a6270;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.payment-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3366ff;
+}
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid #f0f2f7;
+  font-size: 13px;
+}
+
+.order-label {
+  color: #6a7180;
+  font-weight: 500;
+}
+
+.order-number {
+  color: #2a2f3c;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-icon {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.form-container {
+  padding: 28px 32px 32px;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #3366ff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.method-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5160;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #e5e8ef;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2a2f3c;
+  transition: all 0.2s;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3366ff;
+  box-shadow: 0 0 0 3px rgba(51, 102, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: #b8bcc8;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.card-brands {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.card-brands img {
+  height: 20px;
+  width: auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.pay-button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #3366ff 0%, #2952d9 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  transition: transform 0.1s;
+  box-shadow: 0 8px 24px rgba(51, 102, 255, 0.3);
+}
+
+.pay-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(51, 102, 255, 0.4);
+}
+
+.pay-button:active {
+  transform: translateY(0);
+}
+
+/* Добавьте эти стили в card.css */
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 8px;
+  display: none;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.sms-help {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.sms-help p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.resend-button {
+  background: none;
+  border: 1px solid #4d6aff;
+  color: #4d6aff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.resend-button:hover {
+  background: #4d6aff;
+  color: white;
+}
+
+/* Добавьте эти стили в card.css для wrong-sms.html */
+
+.status-icon.error {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.payment-method.error {
+  color: #ff6b6b;
+}
+
+.payment-method.error .method-icon {
+  color: #ff6b6b;
+}
+
+.form-input.error {
+  border-color: #ff6b6b;
+  background-color: #fff5f5;
+}
+
+.form-input.error:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.error-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #fff5f5;
+  border: 1px solid #ffd1d1;
+  border-radius: 8px;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.error-alert svg {
+  flex-shrink: 0;
+}
+
+/* Добавьте эти стили в card.css для change-card.html */
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.security-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Добавьте эти стили в card.css для prepaid-card.html */
+
+.status-icon.warning {
+  background: linear-gradient(135deg, #ffa726, #ff9800);
+}
+
+.payment-method.warning {
+  color: #ffa726;
+}
+
+.payment-method.warning .method-icon {
+  color: #ffa726;
+}
+
+.warning-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #fffaf0;
+  border: 1px solid #ffe0b2;
+  border-radius: 8px;
+  color: #f57c00;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.warning-alert svg {
+  flex-shrink: 0;
+}
+
+/* Добавьте эти стили в card.css для custom-sms.html */
+
+.phone-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: #f0f7ff;
+  border: 1px solid #d1e7ff;
+  border-radius: 8px;
+  color: #1976d2;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.phone-notice svg {
+  flex-shrink: 0;
+}
+
+.phone-notice strong {
+  color: #1565c0;
+  font-weight: 600;
+}
+
+.input-error {
+  border: 2px solid #ff4d4d !important;
+  background-color: #ffe6e6;
+}
+
+.error-message {
+  color: #ff3b3b;
+  font-size: 14px;
+  margin-top: 4px;
+  display: none;
+}
+
+
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .right-section {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .left-section h1,
+  .left-section .subtitle {
+    font-size: 36px;
+  }
+
+  .payment-card {
+    border-radius: 20px;
+  }
+}

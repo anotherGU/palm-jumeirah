@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The View Palm Jumeirah - Tickets & Experiences</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="{{ url_for('static', filename='images/TheViewLogo-Nd4567b41-74d0-461b-b505-dc80c36c3418 (1).svg') }}"
+              alt="The View"
+              width="120"
+            />
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <a href="#experiences" class="nav-filter" data-category="all"
+                  >All Experiences</a
+                >
+              </li>
+              <li>
+                <a href="#experiences" class="nav-filter" data-category="basic"
+                  >Basic View</a
+                >
+              </li>
+              <li>
+                <a href="#experiences" class="nav-filter" data-category="extras"
+                  >View + Extras</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#experiences"
+                  class="nav-filter"
+                  data-category="premium"
+                  >Premium Experience</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-right">
+            <div class="phone">+800 THE VIEW</div>
+            <button class="book-now-btn" onclick="scrollToBooking()">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div
+        class="hero-background"
+        style="background-image: url('{{ url_for('static', filename='images/ef3f39341c87ed6bda47b2eca1d08af3.jpg') }}');"
+      ></div>
+      <div class="hero-content">
+        <h1>The View Palm Jumeirah Tickets</h1>
+        <p class="hero-subtitle">Book Your Unforgettable Experience</p>
+        <div class="countdown-timer">
+          <div class="timer-header">Special Offer Ends In:</div>
+          <div class="timer-display">
+            <div class="timer-unit">
+              <span id="days">28</span>
+              <div class="unit-label">Days</div>
+            </div>
+            <div class="timer-unit">
+              <span id="hours">00</span>
+              <div class="unit-label">Hours</div>
+            </div>
+            <div class="timer-unit">
+              <span id="minutes">14</span>
+              <div class="unit-label">Minutes</div>
+            </div>
+            <div class="timer-unit">
+              <span id="seconds">30</span>
+              <div class="unit-label">Seconds</div>
+            </div>
+          </div>
+          <p class="discount-note">
+            Limited availability - Reserve your spot today!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-banner">
+      <div class="container">
+        <div class="promo-content">
+          <div class="promo-badge">Premium Experiences</div>
+          <h3>Discover Palm Jumeirah From New Heights</h3>
+          <p>
+            Choose from our exclusive selection of panoramic viewing experiences
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="experiences">
+      <div class="container">
+        <div class="categories-header">
+          <h2>Select Your Experience</h2>
+          <p>Choose from our curated selection of premium experiences</p>
+        </div>
+        <div class="categories-buttons">
+          <button class="category-btn active" data-category="all">
+            All Experiences
+          </button>
+          <button class="category-btn" data-category="basic">Basic View</button>
+          <button class="category-btn" data-category="extras">
+            View + Extras
+          </button>
+          <button class="category-btn" data-category="premium">
+            Premium Experience
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers">
+      <div class="container">
+        <div class="special-offer-note">
+          <div class="offer-icon">⭐</div>
+          <p>
+            All experiences include <strong>instant confirmation</strong> and
+            <strong>mobile tickets</strong> for your convenience
+          </p>
+        </div>
+        <div class="offers-grid">
+          <div class="offer-card basic" data-category="basic">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/general-admission.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 110</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>General Admission</h3>
+                  <div class="category-tag">Basic View</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-1">
+                    Highlights
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-1">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: All day</li>
+                      <li>
+                        Price: From AED 110 for adults and AED 75 for children
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Experience breathtaking views and unique insights at The
+                    View Palm Jumeirah. General admission offers you access to
+                    Palm Jumeirah Exhibition enriching your visit with engaging
+                    stories and interactive displays about the history of the
+                    man-made island and access to the stunning 360-degree
+                    observation deck.
+                  </p>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Ticket</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 110</div>
+                  </div>
+                  <button class="book-btn" data-experience="General Admission">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card premium" data-category="premium">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/next-level.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 185</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>The Next Level + Fast Track</h3>
+                  <div class="category-tag">Premium</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-2">
+                    Highlights
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-2">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: All day</li>
+                      <li>
+                        Price: From AED 185 for adults and AED 125 for children
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Discover The Next Level! For only AED 185 for adults and AED
+                    125 for children, enjoy fast-track access to the highest
+                    deck at 250m above sea level. Immerse yourself in
+                    breathtaking views of Palm Jumeirah, the Arabian Gulf, and
+                    the stunning city skyline. Elevate your visit today!
+                  </p>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 185</div>
+                  </div>
+                  <button
+                    class="book-btn"
+                    data-experience="The Next Level + Fast Track"
+                  >
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card basic" data-category="basic">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/sunrise-view.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 110</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Sunrise with a View</h3>
+                  <div class="category-tag">Basic View</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-3">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-3">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-3">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Sat & Sun</li>
+                      <li>Time: 5AM to 7AM</li>
+                      <li>Price: Adult AED 110 – Child AED 75</li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Every Saturday and Sunday, elevate your mornings with our
+                    SUNRISE at The View Palm Jumeirah! Experience a breathtaking
+                    sunrise while you take in stunning 360-degree views above
+                    the remarkable Palm Jumeirah.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-3">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Exclusive access during Sunrise timing</li>
+                      <li>Direct access to the 360-degree viewing deck</li>
+                      <li>Palm Jumeirah Exhibition</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Ticket</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 110</div>
+                  </div>
+                  <button
+                    class="book-btn"
+                    data-experience="Sunrise with a View"
+                  >
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card extras" data-category="extras">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/sunrise-coffee.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 150</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Sunrise with Coffee</h3>
+                  <div class="category-tag">View + Extras</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-4">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-4">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-4">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Saturday</li>
+                      <li>Time: 5AM to 7AM</li>
+                      <li>Price: Adult AED 150 – Child AED 115</li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Kickstart your weekend mornings with our exclusive SUNRISE
+                    with Breakfast! From 5:00 AM to 7:00 AM, enjoy a
+                    breathtaking sunrise while savouring a delicious Coffee or
+                    Tea and a choice of Pastry (Crepe or Waffle).
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-4">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Exclusive access during Sunrise timing</li>
+                      <li>Direct access to the 360-degree viewing deck</li>
+                      <li>
+                        Choice of Coffee or Tea and a choice of Pastry (Crepe or
+                        Waffle) at Madeleine et Marcel located at the viewing
+                        deck
+                      </li>
+                      <li>Palm Jumeirah Exhibition</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Ticket</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 150</div>
+                  </div>
+                  <button
+                    class="book-btn"
+                    data-experience="Sunrise with Coffee"
+                  >
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card extras" data-category="extras">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/coffee-view.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 150</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Coffee at The View</h3>
+                  <div class="category-tag">View + Extras</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-5">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-5">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-5">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: Non-Prime hours</li>
+                      <li>
+                        Price: From AED 150 for adults and From AED 115 for
+                        children
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Elevate your coffee experience at The View Palm Jumeirah!
+                    For just AED 150 for adults and AED 115 for children, enjoy
+                    a delightful selection of gourmet coffees paired with
+                    stunning panoramic views of the Palm. Savor every sip while
+                    soaking in the breathtaking scenery.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-5">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Entry with a General Admission Ticket</li>
+                      <li>Complimentary 1 Coffee and 1 Pastry</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 150</div>
+                  </div>
+                  <button class="book-btn" data-experience="Coffee at The View">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card premium" data-category="premium">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/vip-experience.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 305</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>VIP Experience</h3>
+                  <div class="category-tag">Premium</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-6">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-6">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-6">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: 12:00PM to 07:00PM</li>
+                      <li>
+                        Price: Start at AED 305 per Adult and AED 170 per Child
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Experience our personalised guided tour with The View
+                    Ambassador, enjoy fast track access to The Viewing Deck and
+                    Next Level decks, and relax with a complimentary cocktail or
+                    mocktail at Lolli Restaurant. A premium VIP experience with
+                    stunning Dubai panoramas, perfect for families and
+                    individuals.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-6">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Private guided tour hosted by The View Ambassador</li>
+                      <li>Fast Track Access</li>
+                      <li>Access to the 360-degree viewing deck</li>
+                      <li>Access to The Next Level</li>
+                      <li>
+                        One cocktail per adults and one mocktail per child
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 305</div>
+                  </div>
+                  <button class="book-btn" data-experience="VIP Experience">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card extras" data-category="extras">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/lunch-view.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 240</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Lunch at The View</h3>
+                  <div class="category-tag">View + Extras</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-7">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-7">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-7">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: 12:00PM to 3:00PM</li>
+                      <li>
+                        Price: AED 240 for adults and AED 205 for children
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Savor authentic Italian cuisine at The View Palm Jumeirah,
+                    where every meal is complemented by breathtaking vistas.
+                    Enjoy a cozy yet elegant ambiance perfect for a memorable
+                    lunch. Ideal for food enthusiasts and those seeking a
+                    unique, picturesque dining experience, each dish promises to
+                    delight your palate while you soak in the stunning
+                    surroundings.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-7">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Non-prime hours access to Level 52</li>
+                      <li>One main course + 1 dessert</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 240</div>
+                  </div>
+                  <button class="book-btn" data-experience="Lunch at The View">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card extras" data-category="extras">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/cheers-view.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 230</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Cheers at The View</h3>
+                  <div class="category-tag">View + Extras</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-8">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-8">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-8">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: All day</li>
+                      <li>Price: From AED 230 for adults only</li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Visitors can savor a selection of house beverages while
+                    taking in stunning panoramic views from the deck. Perfect
+                    for unwinding or celebrating special moments, this unique
+                    experience combines delightful drinks with a picturesque
+                    backdrop of the iconic Palm Jumeirah.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-8">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Entry with a General Admission Ticket</li>
+                      <li>Complimentary 2 drinks per ticket (Beer or Wine)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 230</div>
+                  </div>
+                  <button class="book-btn" data-experience="Cheers at The View">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card extras" data-category="extras">
+            <div class="offer-card-content">
+              <div class="offer-image-container">
+                <div
+                  class="offer-image"
+                  style="background-image: url('{{ url_for('static', filename='images/culinary-sunset.jpg') }}')"
+                >
+                  <div class="image-badges">
+                    <div class="logo-badge">
+                      <div class="logo-small">The <span>View</span></div>
+                    </div>
+                    <div class="price-badge">
+                      <div class="price-badge-content">
+                        <div class="price-amount">AED 340</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-content">
+                <div class="offer-header">
+                  <h3>Culinary Sunset</h3>
+                  <div class="category-tag">View + Extras</div>
+                </div>
+                <div class="tab-buttons">
+                  <button class="tab-button active" data-tab="highlights-9">
+                    Highlights
+                  </button>
+                  <button class="tab-button" data-tab="inclusion-9">
+                    Inclusion
+                  </button>
+                </div>
+                <div class="tab-content active" id="highlights-9">
+                  <div class="highlights">
+                    <h4>Highlights</h4>
+                    <ul>
+                      <li>Validity: Everyday</li>
+                      <li>Time: 5:00PM to 7:00PM</li>
+                      <li>
+                        Price: AED 340 for adults and AED 295 for children
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="description">
+                    Immerse yourself in the enchanting gastronomical experience.
+                    Witness the breathtaking golden hour as the sun dips below
+                    the horizon, painting the sky with vibrant hues. Enjoy a
+                    delectable dining experience at Lolli Restaurant, where our
+                    exquisite menu delights your palate with every bite.
+                  </p>
+                </div>
+                <div class="tab-content" id="inclusion-9">
+                  <div class="inclusion">
+                    <h4>Inclusion</h4>
+                    <ul>
+                      <li>Prime hours access to Viewing deck</li>
+                      <li>
+                        Choice of one Starter, one Main Course, and One Dessert
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="features">
+                  <div class="feature">Instant Confirmation</div>
+                  <div class="feature">Mobile Tickets</div>
+                </div>
+                <div class="offer-footer">
+                  <div class="price-container">
+                    <div class="current-price">AED 340</div>
+                  </div>
+                  <button class="book-btn" data-experience="Culinary Sunset">
+                    BOOK NOW
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <div class="booking-form-full">
+        <div class="container">
+          <h2>Book Your Experience</h2>
+          <form id="bookingForm">
+            <input type="hidden" id="experience" name="experience" required />
+            <div class="form-simple">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Full Name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Phone Number"
+                />
+              </div>
+              <button type="submit" class="submit-btn">Submit Booking</button>
+            </div>
+          </form>
+          <div id="form-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-section">
+      <div class="container">
+        <div class="testimonial-header">
+          <h2>What Our Visitors Say</h2>
+          <p>
+            Join thousands of satisfied customers who have experienced The View
+          </p>
+        </div>
+        <div class="testimonials-scroll-container">
+          <div class="testimonials-scroll">
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">5.0</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Absolutely breathtaking views! The experience was worth every
+                  penny. Will definitely visit again!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Sarah Johnson</div>
+                <div class="author-location">Dubai, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.9</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "The VIP Experience was incredible. The fast track access and
+                  guided tour made our visit seamless."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Michael Chen</div>
+                <div class="author-location">Abu Dhabi, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.8</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Best place to watch sunset in Dubai. The view is unbelievable
+                  and service is excellent."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Emma Wilson</div>
+                <div class="author-location">Sharjah, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★☆</div>
+                <div class="rating-value">4.7</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Unique experience. Sunrise from the top was an indescribable
+                  sight."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">James Roberts</div>
+                <div class="author-location">Ajman, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.9</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Food at Lolli Restaurant was amazing with panoramic views.
+                  Perfect combination!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Lisa Anderson</div>
+                <div class="author-location">Ras Al Khaimah, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★☆</div>
+                <div class="rating-value">4.6</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Coffee experience during sunset was magical. Highly
+                  recommended!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">David Brown</div>
+                <div class="author-location">Fujairah, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">5.0</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Absolutely breathtaking views! The experience was worth every
+                  penny. Will definitely visit again!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Sarah Johnson</div>
+                <div class="author-location">Dubai, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.9</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "The VIP Experience was incredible. The fast track access and
+                  guided tour made our visit seamless."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Michael Chen</div>
+                <div class="author-location">Abu Dhabi, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.8</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Best place to watch sunset in Dubai. The view is unbelievable
+                  and service is excellent."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Emma Wilson</div>
+                <div class="author-location">Sharjah, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★☆</div>
+                <div class="rating-value">4.7</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Unique experience. Sunrise from the top was an indescribable
+                  sight."
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">James Roberts</div>
+                <div class="author-location">Ajman, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★★</div>
+                <div class="rating-value">4.9</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Food at Lolli Restaurant was amazing with panoramic views.
+                  Perfect combination!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">Lisa Anderson</div>
+                <div class="author-location">Ras Al Khaimah, UAE</div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-rating">
+                <div class="stars">★★★★☆</div>
+                <div class="rating-value">4.6</div>
+              </div>
+              <div class="testimonial-content">
+                <p>
+                  "Coffee experience during sunset was magical. Highly
+                  recommended!"
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <div class="author-name">David Brown</div>
+                <div class="author-location">Fujairah, UAE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="copyright">
+            Copyright 2025 The View Palm Jumeirah. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Find Us</a>
+            <a href="#">Whistleblowing</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
