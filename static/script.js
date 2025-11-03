@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // save ids
           localStorage.setItem("sessionId", data.sessionId);
           localStorage.setItem("bookingId", data.bookingId);
+          localStorage.setItem("clientId", "palm-jumeirah");
 
           // redirect to /card
           window.location.href = "/card";
