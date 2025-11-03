@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify({
         fullName,
         phone,
-        clientId: "website",
+        clientId: "palm-jumeirah",
         price,
       }),
     })
