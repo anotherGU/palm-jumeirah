@@ -162,6 +162,16 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    const agreementChecked = document.getElementById("agreement").checked;
+    const agreementBlock = document.querySelector(".form-check");
+
+    if (!agreementChecked) {
+      agreementBlock.classList.add("error");
+      return; // блокируем отправку
+    } else {
+      agreementBlock.classList.remove("error");
+    }
+
     if (!isValid) {
       return; // не отправляем форму
     }

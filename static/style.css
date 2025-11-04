@@ -1340,3 +1340,28 @@ input.error {
     padding: 24px 15px;
   }
 }
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: white;
+}
+
+.form-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.form-check label span {
+  color: #4cc3ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form-check.error label {
+  color: #ff6b6b;
+}
