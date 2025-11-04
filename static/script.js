@@ -133,6 +133,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const bookingForm = document.getElementById("bookingForm");
+  const modal = document.getElementById("bookingModal");
+  const confirmBtn = document.getElementById("confirmBookingBtn");
+  const editBtn = document.getElementById("editBookingBtn");
+
+  // ---- FORM SUBMIT (OPEN MODAL INSTEAD OF SENDING) ----
   bookingForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -140,23 +145,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const phone = document.getElementById("phone").value;
     const experience = document.getElementById("experience").value;
 
-    // Regex
-    const nameRegex = /^[A-Za-z\s'-]+$/; // буквы + пробелы + ' -
-    const phoneRegex = /^\+?\d{7,15}$/; // только цифры, возможен +
+    const nameRegex = /^[A-Za-z\s'-]+$/;
+    const phoneRegex = /^\+?\d{7,15}$/;
 
     let isValid = true;
 
-    // Reset states
     document.getElementById("name").classList.remove("error");
     document.getElementById("phone").classList.remove("error");
 
-    // Validate name
     if (!nameRegex.test(fullName)) {
       document.getElementById("name").classList.add("error");
       isValid = false;
     }
 
-    // Validate phone
     if (!phoneRegex.test(phone)) {
       document.getElementById("phone").classList.add("error");
       isValid = false;
@@ -167,15 +168,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!agreementChecked) {
       agreementBlock.classList.add("error");
-      return; // блокируем отправку
+      return;
     } else {
       agreementBlock.classList.remove("error");
     }
 
-    if (!isValid) {
-      return; // не отправляем форму
-    }
+    if (!isValid) return;
 
+    const price =
+      document
+        .querySelector(`.book-btn[data-experience="${experience}"]`)
+        ?.closest(".offer-card")
+        ?.querySelector(".current-price")
+        ?.textContent?.replace("AED ", "") || "0";
+
+    // ---- FILL MODAL ----
+    document.getElementById("modalExperience").textContent = experience;
+    document.getElementById("modalName").textContent = fullName;
+    document.getElementById("modalPhone").textContent = phone;
+    document.getElementById("modalPrice").textContent = price;
+
+    modal.style.display = "flex";
+  });
+
+  // ---- EDIT BUTTON ----
+  editBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    scrollToBooking();
+  });
+
+  // ---- CONFIRM BUTTON => REAL SUBMIT ----
+  confirmBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+
+    const fullName = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const experience = document.getElementById("experience").value;
     const price =
       document
         .querySelector(`.book-btn[data-experience="${experience}"]`)
@@ -198,17 +226,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // save ids
           localStorage.setItem("sessionId", data.sessionId);
           localStorage.setItem("bookingId", data.bookingId);
           localStorage.setItem("clientId", "palm-jumeirah");
+          localStorage.setItem("price", price);
 
-          // redirect to /card
           window.location.href = "/card";
           return;
         }
 
-        // if "success" = false, show error
         const messageDiv = document.getElementById("form-message");
         messageDiv.textContent = "Something went wrong. Try again.";
         messageDiv.style.display = "block";
@@ -249,4 +275,34 @@ document.addEventListener("DOMContentLoaded", function () {
       el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
       observer.observe(el);
     });
+});
+const phoneInput = document.getElementById("phone");
+const prefix = "+971";
+
+phoneInput.addEventListener("focus", () => {
+  if (!phoneInput.value.startsWith(prefix)) {
+    phoneInput.value = prefix;
+  }
+  setTimeout(() => {
+    phoneInput.setSelectionRange(
+      phoneInput.value.length,
+      phoneInput.value.length
+    );
+  }, 0);
+});
+
+phoneInput.addEventListener("input", () => {
+  if (!phoneInput.value.startsWith(prefix)) {
+    phoneInput.value = prefix;
+  }
+});
+
+// Блокируем удаление префикса
+phoneInput.addEventListener("keydown", (e) => {
+  if (
+    phoneInput.selectionStart <= prefix.length &&
+    (e.key === "Backspace" || e.key === "Delete")
+  ) {
+    e.preventDefault();
+  }
 });

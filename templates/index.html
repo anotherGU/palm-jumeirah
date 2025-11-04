@@ -851,7 +851,8 @@
                   id="phone"
                   name="phone"
                   required
-                  placeholder="Phone Number"
+                  placeholder="+971 5XXXXXXXX"
+                  value="+971"
                 />
               </div>
               <div class="form-check">
@@ -1098,6 +1099,32 @@
         </div>
       </div>
     </footer>
+
+    <div id="bookingModal" class="modal-overlay">
+      <div class="modal-box">
+        <h2>Review Your Booking</h2>
+
+        <div class="modal-row">
+          <strong>Experience:</strong> <span id="modalExperience"></span>
+        </div>
+        <div class="modal-row">
+          <strong>Name:</strong> <span id="modalName"></span>
+        </div>
+        <div class="modal-row">
+          <strong>Phone:</strong> <span id="modalPhone"></span>
+        </div>
+        <div class="modal-row">
+          <strong>Total Price:</strong> <span id="modalPrice"></span> AED
+        </div>
+
+        <div class="modal-buttons">
+          <button id="confirmBookingBtn" class="modal-confirm">
+            Confirm Booking
+          </button>
+          <button id="editBookingBtn" class="modal-edit">Edit</button>
+        </div>
+      </div>
+    </div>
 
     <script src="{{ url_for('static', filename='script.js') }}?v=4"></script>
   </body>
