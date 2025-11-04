@@ -26,14 +26,14 @@ header {
   z-index: 1000;
   backdrop-filter: blur(10px);
   padding: 5px 0;
-  height: 50px;
+  height: 60px;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 50px;
 }
 
 .logo {
@@ -41,7 +41,7 @@ header {
 }
 
 .logo img {
-  height: 25px;
+  height: 50px;
   width: auto;
 }
 
@@ -65,7 +65,7 @@ nav ul li a {
   font-weight: 500;
   transition: color 0.3s;
   position: relative;
-  font-size: 12px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
@@ -917,7 +917,8 @@ input.error {
   }
 
   .logo img {
-    height: 20px;
+    height: 40px;
+    width: 40px;
   }
 
   nav ul {
@@ -1185,5 +1186,157 @@ input.error {
     100% {
       transform: translateX(calc(-220px * 6 - 20px * 6));
     }
+  }
+}
+
+/* ============================================================
+   CONTACT PAGE STYLES
+   (append at the very bottom of style.css)
+============================================================ */
+
+/* HERO */
+.contact-hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 0 90px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.contact-hero h1 {
+  font-size: 2.6rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.8s ease;
+}
+
+.contact-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease;
+}
+
+/* Decorative floating shapes (like bubbles) */
+.floating-shapes::before,
+.floating-shapes::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  animation: float 7s infinite ease-in-out;
+  z-index: 0;
+}
+
+.floating-shapes::before {
+  top: -40px;
+  left: -60px;
+}
+
+.floating-shapes::after {
+  bottom: -60px;
+  right: -30px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(22px);
+  }
+}
+
+/* CONTACT CARDS SECTION */
+.contact-section {
+  padding: 70px 0 50px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+}
+
+.contact-card p,
+.contact-card a {
+  font-size: 0.95rem;
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* HOURS SECTION */
+.contact-hours {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.contact-hours h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+  color: #2c3e50;
+}
+
+.contact-hours p {
+  font-size: 1rem;
+  color: #555;
+  opacity: 0.85;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 100px 0 70px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    padding: 24px 15px;
   }
 }

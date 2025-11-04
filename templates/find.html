@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Us - The View Palm Jumeirah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        /* Hero Section */
+        .find-us-hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 0 70px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .find-us-hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.2) 0%, transparent 70%);
+            top: -250px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            height: 500px;
+            background: linear-gradient(135deg, #e9ecef, #dee2e6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .map-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pin-drop 2s ease infinite;
+        }
+
+        @keyframes pin-drop {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .map-placeholder p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Directions Section */
+        .directions-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .direction-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .direction-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .direction-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .direction-card:nth-child(1) { animation-delay: 0.1s; }
+        .direction-card:nth-child(2) { animation-delay: 0.2s; }
+        .direction-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .direction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .direction-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float-icon 3s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .direction-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .direction-card p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .direction-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .direction-card li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .direction-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Landmark Section */
+        .landmarks-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .landmark-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .landmark-card:nth-child(1) { animation-delay: 0.1s; }
+        .landmark-card:nth-child(2) { animation-delay: 0.2s; }
+        .landmark-card:nth-child(3) { animation-delay: 0.3s; }
+        .landmark-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .landmark-card:hover {
+            transform: translateY(-5px);
+            border-color: #3498db;
+            background: white;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .landmark-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .landmark-card h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .landmark-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        /* Parking Section */
+        .parking-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parking-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .parking-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .parking-content h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .parking-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .parking-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .parking-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .parking-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .parking-card p {
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        /* Transportation Section */
+        .transport-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .transport-card {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            border: 2px solid #e9ecef;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .transport-card:nth-child(1) { animation-delay: 0.1s; }
+        .transport-card:nth-child(2) { animation-delay: 0.2s; }
+        .transport-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .transport-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+            border-color: #3498db;
+        }
+
+        .transport-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: vehicle-move 2s ease-in-out infinite;
+        }
+
+        @keyframes vehicle-move {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+
+        .transport-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .transport-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .find-us-hero {
+                padding: 70px 0 50px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-icon {
+                font-size: 3rem;
+            }
+
+            .section-header h2,
+            .parking-content h2 {
+                font-size: 2rem;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .directions-grid,
+            .landmarks-grid,
+            .transport-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .direction-card,
+            .parking-card,
+            .transport-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .direction-icon,
+            .transport-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">The <span>View</span></div>
+                <a href="/" class="back-btn">← Back to Home</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="find-us-hero">
+        <div class="hero-content">
+            <div class="hero-icon">📍</div>
+            <h1>Find Your Way to Paradise</h1>
+            <p>Located at the iconic Palm Tower on Palm Jumeirah, Dubai's most extraordinary destination awaits you</p>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Location</h2>
+                <p>The Palm Tower, Palm Jumeirah, Dubai</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <h3>The Palm Tower</h3>
+                    <p>Palm Jumeirah<br>Dubai, United Arab Emirates</p>
+                    <p style="margin-top: 20px; font-size: 0.95rem; color: #7f8c8d;">
+                        <strong>GPS Coordinates:</strong><br>
+                        25.1124° N, 55.1390° E
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="directions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Get Here</h2>
+                <p>Multiple convenient routes to reach us</p>
+            </div>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon">🚗</div>
+                    <h3>By Car</h3>
+                    <p><strong>From Dubai Marina:</strong></p>
+                    <ul>
+                        <li>Head towards Palm Jumeirah</li>
+                        <li>Follow signs to The Palm Tower</li>
+                        <li>Approximately 10-15 minutes</li>
+                        <li>Valet parking available</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>From Downtown Dubai:</strong></p>
+                    <ul>
+                        <li>Take Sheikh Zayed Road</li>
+                        <li>Exit towards Palm Jumeirah</li>
+                        <li>Approximately 25-30 minutes</li>
+                    </ul>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-icon">🚕</div>
+                    <h3>By Taxi or Ride-Share</h3>
+                    <p>Simply tell your driver:</p>
+                    <ul>
+                        <li>"The Palm Tower, Palm Jumeirah"</li>
+                        <li>Uber and Careem readily available</li>
+                        <li>Drop-off at main entrance</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Estimated Fares:</strong></p>
+                    <ul>
+                        <li>From Dubai Marina: AED 30-40</li>
+                        <li>From Downtown: AED 60-80</li>
+                        <li>From Airport: AED 100-120</li>
+                    </ul>
+                </div>
+
+                <div class="direction-card">
+                    <div class="direction-icon">🚇</div>
+                    <h3>By Public Transport</h3>
+                    <p><strong>Dubai Tram + Taxi:</strong></p>
+                    <ul>
+                        <li>Take tram to Palm Jumeirah Station</li>
+                        <li>Then taxi to The Palm Tower</li>
+                        <li>Budget-friendly option</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Palm Monorail:</strong></p>
+                    <ul>
+                        <li>From Gateway Station</li>
+                        <li>Enjoy scenic Palm views</li>
+                        <li>Short taxi ride to venue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="landmarks-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nearby Landmarks</h2>
+                <p>You're close when you see these icons</p>
+            </div>
+            <div class="landmarks-grid">
+                <div class="landmark-card">
+                    <div class="landmark-icon">🏨</div>
+                    <h4>Atlantis The Palm</h4>
+                    <p>3 minutes drive</p>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="landmark-icon">🏖️</div>
+                    <h4>Nakheel Mall</h4>
+                    <p>Within walking distance</p>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="landmark-icon">🌊</div>
+                    <h4>The Pointe</h4>
+                    <p>5 minutes walk</p>
+                </div>
+
+                <div class="landmark-card">
+                    <div class="landmark-icon">🎡</div>
+                    <h4>Ain Dubai View</h4>
+                    <p>Visible from observation deck</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="parking-section">
+        <div class="parking-content">
+            <div class="container">
+                <h2>Parking Information</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">Convenient parking options for all visitors</p>
+                <div class="parking-info">
+                    <div class="parking-card">
+                        <h4>🅿️ Valet Parking</h4>
+                        <p>Available at main entrance<br>Professional valet service<br>AED 50 per session</p>
+                    </div>
+
+                    <div class="parking-card">
+                        <h4>🚙 Self-Parking</h4>
+                        <p>Multi-level parking facility<br>Direct elevator access<br>First 2 hours free</p>
+                    </div>
+
+                    <div class="parking-card">
+                        <h4>♿ Accessible Parking</h4>
+                        <p>Reserved spaces available<br>Ground level access<br>Complimentary for visitors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transport-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transportation Options</h2>
+                <p>Choose your preferred way to travel</p>
+            </div>
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="transport-icon">🚗</div>
+                    <h3>Private Car</h3>
+                    <p>Most convenient option with ample parking facilities. Navigate directly to The Palm Tower for easy access.</p>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🚕</div>
+                    <h3>Taxi & Ride-Share</h3>
+                    <p>Uber, Careem, and Dubai Taxi services operate 24/7. Simply mention "The Palm Tower" as your destination.</p>
+                </div>
+
+                <div class="transport-card">
+                    <div class="transport-icon">🚌</div>
+                    <h3>Hotel Shuttle</h3>
+                    <p>Many nearby hotels offer shuttle services to Palm Jumeirah attractions. Check with your concierge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 The View Palm Jumeirah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.direction-card, .landmark-card, .transport-card, .section-header, .map-container').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

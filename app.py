@@ -65,6 +65,13 @@ def privacy_page():
 def terms_page():
     return render_template('terms.html')
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/find")
+def find():
+    return render_template("find.html")
 
 @app.route('/submit_booking', methods=['POST'])
 def submit_booking():
