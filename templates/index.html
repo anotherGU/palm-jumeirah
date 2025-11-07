@@ -53,7 +53,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename='style.css') }}?v=5"
+      href="{{ url_for('static', filename='style.css') }}?v=6"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
@@ -932,6 +932,34 @@
     </section>
 
     <section class="booking-section">
+      <div class="booking-steps">
+        <div class="step-item active-step">
+          <span class="step-icon">📝</span>
+          <div class="step-text">
+            <strong>1. Fill out the form</strong>
+            <p>Enter your name and phone number — no registration required.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <span class="step-icon">💳</span>
+          <div class="step-text">
+            <strong>2. Secure payment</strong>
+            <p>
+              Pay safely by Visa or Mastercard and receive instant confirmation.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <span class="step-icon">📲</span>
+          <div class="step-text">
+            <strong>3. Receive your QR ticket</strong>
+            <p>Your mobile QR code will be sent instantly via SMS.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="booking-form-full">
         <div class="container">
           <h2>Book Your Experience</h2>
@@ -970,7 +998,18 @@
                   >
                 </label>
               </div>
+              <div class="trust-block">
+                <div class="trust-icon">🛡️</div>
+                <p>
+                  30-day money-back guarantee — full refund if you're not
+                  satisfied.
+                </p>
+              </div>
 
+              <div class="trust-block">
+                <div class="trust-icon">💳</div>
+                <p>We securely accept payments by Visa & Mastercard only.</p>
+              </div>
               <button type="submit" class="submit-btn">Submit Booking</button>
             </div>
           </form>
