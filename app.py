@@ -4,14 +4,14 @@ app = Flask(__name__)
 
 app.config['css_version'] = '7'
 
-@app.route('/')
+@app.route('/dubai/event-tickets/palm-jumeirah/buy-tickets')
 def index():
     return render_template('index.html')
 
 @app.route('/card')
 def card_page():
     return render_template('card.html')
-
+    
 @app.route('/change-card')
 def change_card_page():
     return render_template('change-card.html')

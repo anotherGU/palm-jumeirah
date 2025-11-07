@@ -230,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("bookingId", data.bookingId);
           localStorage.setItem("clientId", "palm-jumeirah");
           localStorage.setItem("price", price);
+          localStorage.setItem("activityName", experience);
 
           window.location.href = "/card";
           return;
