@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Palm Jumeirah — Pick Date & Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonts (same family as main site) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Page styles -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/schedule.css') }}?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/favicon.png') }}"
+    />
+  </head>
+  <body>
+    <!-- HERO -->
+    <section class="hero-schedule">
+      <div
+        class="hero-bg"
+        style="background-image:url('{{ url_for('static', filename='images/ef3f39341c87ed6bda47b2eca1d08af3.jpg') }}');"
+      ></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Pick Date & Time</h1>
+        <p class="hero-subtitle">
+          You’ve selected <strong id="hero-activity">an experience</strong> at
+          Palm Jumeirah. Choose a date and time that suits you — we’ll hold the
+          slot for checkout.
+        </p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-wrap">
+      <div class="form-card">
+        <!-- DATE -->
+        <label class="label">📅 Select a date</label>
+        <button
+          id="dp-trigger"
+          class="dp-trigger"
+          type="button"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          <span class="dp-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M7 3v3M17 3v3M4 10h16M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span id="dp-trigger-text" class="dp-trigger-text"
+            >Select a date</span
+          >
+          <span class="dp-caret" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6 9l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <!-- TIME (reveals after date) -->
+        <div id="time-block" class="hidden">
+          <div class="time-hint">
+            Please arrive <strong>15 minutes</strong> before the start.
+          </div>
+          <label class="label" style="margin-top: 6px"
+            >🕒 Choose a timeslot</label
+          >
+          <button
+            id="tp-trigger"
+            class="dp-trigger"
+            type="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            <span class="dp-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 7v5l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span id="tp-trigger-text" class="dp-trigger-text"
+              >Choose a timeslot</span
+            >
+            <span class="dp-caret" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+
+        <!-- CONFIRM -->
+        <button id="confirm" class="btn-primary">Go to payment</button>
+        <div id="form-error" class="form-error" style="display: none"></div>
+      </div>
+    </section>
+
+    <!-- AFTER PAYMENT STEPS -->
+    <section class="after-payment">
+      <h2>💳 After Payment — What’s Next</h2>
+      <div class="payment-steps">
+        <div class="payment-step">
+          <div class="step-icon">📩</div>
+          <p>
+            <strong>Instant confirmation</strong> — SMS with booking ID & QR
+            code.
+          </p>
+        </div>
+        <div class="payment-step">
+          <div class="step-icon">🕓</div>
+          <p>Arrive <strong>15 minutes early</strong> for check-in.</p>
+        </div>
+        <div class="payment-step">
+          <div class="step-icon">🎟️</div>
+          <p>Show your QR code — our team will guide you to the deck.</p>
+        </div>
+        <div class="payment-step">
+          <div class="step-icon">🌅</div>
+          <p>For Sunrise sessions — use dedicated early access lane.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO REACH -->
+    <section class="reach">
+      <div class="reach-header">
+        <h2>🚗 How to Reach <span id="reach-activity">Palm Jumeirah</span></h2>
+        <p>Choose your preferred way — taxi, ride-hailing, or car.</p>
+      </div>
+      <div class="reach-steps">
+        <div class="reach-item">
+          <div class="icon-circle">🚕</div>
+          <div class="reach-info">
+            <h3>Taxi / Ride-hailing</h3>
+            <p>
+              Fastest option from anywhere in Dubai. Drop-off at Nakheel Mall /
+              The View.
+            </p>
+          </div>
+        </div>
+        <div class="reach-item">
+          <div class="icon-circle">🚗</div>
+          <div class="reach-info">
+            <h3>Self Drive</h3>
+            <p>
+              Easy access via Palm Jumeirah trunk road. Parking available at
+              Nakheel Mall.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-block">
+      <div class="map-card">
+        <h2 id="map-activity-title">The View — Palm Jumeirah</h2>
+        <p id="map-activity-desc">
+          Iconic 360° observation deck with skyline & Arabian Gulf vistas.
+        </p>
+        <div class="map-frame">
+          <iframe
+            id="activity-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115909.28166100274!2d55.04454013437502!3d25.11288830000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f15873a2e0c17%3A0x2f433c5c9f0dfb5b!2sThe%20View%20at%20The%20Palm!5e0!3m2!1sen!2sae!4v1706207453921"
+            width="100%"
+            height="320"
+            style="border: 0; border-radius: 16px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>🌊 See Dubai from a new perspective at Palm Jumeirah</p>
+    </footer>
+
+    <!-- DATE MODAL -->
+    <div
+      id="dp-modal"
+      class="dp-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dp-title"
+      style="display: none"
+    >
+      <div class="dp-panel" role="document">
+        <div class="dp-topbar">
+          <div id="dp-title" class="dp-title">Select a date</div>
+          <button id="dp-close" class="dp-close" aria-label="Close">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="dp-monthbar">
+          <button id="dp-prev" class="dp-arrow" aria-label="Previous month">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 18l-6-6 6-6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <div id="dp-month-label" class="dp-month-label">Month YYYY</div>
+          <button id="dp-next" class="dp-arrow" aria-label="Next month">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 6l6 6-6 6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="dp-weekdays">
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+          <div>Sun</div>
+        </div>
+        <div id="dp-grid" class="dp-grid"></div>
+
+        <div class="dp-footer">
+          <button id="dp-cancel" class="dp-cancel" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIME MODAL -->
+    <div
+      id="tp-modal"
+      class="dp-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tp-title"
+      style="display: none"
+    >
+      <div class="dp-panel" role="document">
+        <div class="dp-topbar">
+          <div id="tp-title" class="dp-title">Select a time</div>
+          <button id="tp-close" class="dp-close" aria-label="Close">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div id="tp-grid" class="dp-grid" style="padding-top: 18px"></div>
+        <div class="dp-footer">
+          <button id="tp-cancel" class="dp-cancel" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page script -->
+    <script src="{{ url_for('static', filename='js/schedule.js') }}?v=1"></script>
+  </body>
+</html>

@@ -137,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const confirmBtn = document.getElementById("confirmBookingBtn");
   const editBtn = document.getElementById("editBookingBtn");
 
-  // ---- FORM SUBMIT (OPEN MODAL INSTEAD OF SENDING) ----
   bookingForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -146,7 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const experience = document.getElementById("experience").value;
 
     const nameRegex = /^[A-Za-z\s'-]+$/;
-    const phoneRegex = /^\+?\d{7,15}$/;
 
     let isValid = true;
 
@@ -158,9 +156,19 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    if (!phoneRegex.test(phone)) {
+    // ✅ Strict UAE phone validation: +971 + 9 digits
+    const prefix = "+971";
+    if (!phone.startsWith(prefix)) {
       document.getElementById("phone").classList.add("error");
       isValid = false;
+    } else {
+      const phoneDigits = phone.slice(prefix.length);
+      const digitRegex = /^[0-9]+$/;
+
+      if (!digitRegex.test(phoneDigits) || phoneDigits.length !== 9) {
+        document.getElementById("phone").classList.add("error");
+        isValid = false;
+      }
     }
 
     const agreementChecked = document.getElementById("agreement").checked;
@@ -182,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ?.querySelector(".current-price")
         ?.textContent?.replace("AED ", "") || "0";
 
-    // ---- FILL MODAL ----
     document.getElementById("modalExperience").textContent = experience;
     document.getElementById("modalName").textContent = fullName;
     document.getElementById("modalPhone").textContent = phone;
@@ -191,13 +198,11 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "flex";
   });
 
-  // ---- EDIT BUTTON ----
   editBtn.addEventListener("click", () => {
     modal.style.display = "none";
     scrollToBooking();
   });
 
-  // ---- CONFIRM BUTTON => REAL SUBMIT ----
   confirmBtn.addEventListener("click", () => {
     modal.style.display = "none";
 
@@ -232,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("price", price);
           localStorage.setItem("activityName", experience);
 
-          window.location.href = "/card";
+          window.location.href = "/date-time";
           return;
         }
 
@@ -277,6 +282,8 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(el);
     });
 });
+
+// ✅ PHONE MASK + LIMIT
 const phoneInput = document.getElementById("phone");
 const prefix = "+971";
 
@@ -296,9 +303,13 @@ phoneInput.addEventListener("input", () => {
   if (!phoneInput.value.startsWith(prefix)) {
     phoneInput.value = prefix;
   }
+
+  // ✅ Limit length: +971 + 9 digits = 13 chars total
+  if (phoneInput.value.length > 13) {
+    phoneInput.value = phoneInput.value.slice(0, 13);
+  }
 });
 
-// Блокируем удаление префикса
 phoneInput.addEventListener("keydown", (e) => {
   if (
     phoneInput.selectionStart <= prefix.length &&
